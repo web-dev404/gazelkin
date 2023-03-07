@@ -1,0 +1,147 @@
+.plan-stats {
+	margin-bottom: 80px;
+
+	&__title {
+		font-size: 32px;
+		font-weight: 700;
+		line-height: 37.5px;
+		margin-bottom: 40px;
+	}
+
+	&__texts {
+		display: flex;
+		gap: 60px;
+
+		.normal-text {
+			width: 50%;
+		}
+	}
+
+	&__cards {
+		margin-top: 56px;
+		display: flex;
+		gap: 100px;
+	}
+
+	&__card {
+		&-title {
+			font-size: 24px;
+			font-weight: 500;
+			margin-bottom: 25px;
+		}
+
+		&-value {
+			display: flex;
+			border-bottom: 1px dashed #c2c2c2;
+			padding: 7px 0 5px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			align-items: flex-end;
+			gap: 40px;
+			transition: 200ms;
+			cursor: default;
+			max-width: 414px;
+
+			&:hover {
+				color: var(--main-red);
+			}
+
+			&-name {
+				line-height: 24px;
+			}
+
+			&-item {
+				min-width: max-content;
+				display: block;
+			}
+		}
+	}
+}
+
+@media (max-width: 1250px) {
+	.plan-stats {
+		&__cards {
+			flex-direction: column;
+			gap: 40px;
+		}
+
+		&__card {
+			width: 600px;
+		}
+	}
+}
+
+@media (max-width: 1000px) {
+	.plan-stats__texts {
+		flex-direction: column;
+		gap: 0 !important;
+		position: relative;
+		overflow: hidden;
+
+		.normal-text {
+			width: 100% !important;
+		}
+
+		&-shadow {
+			display: block !important;
+			box-shadow: 0px 0px 100px 126px #fff;
+			position: absolute;
+			bottom: -18px;
+			left: 0;
+			width: 100%;
+
+			button {
+				font-size: 30px;
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				bottom: 10px;
+			}
+		}
+	}
+}
+
+@media (max-width: 668px) {
+	.plan-stats {
+		margin-bottom: 118px;
+
+		&__title {
+			font-size: 24px;
+			font-weight: 500;
+			line-height: 36px;
+			margin-bottom: 18px;
+		}
+
+		&__cards {
+			margin-top: 40px;
+		}
+
+		&__card {
+			width: 100%;
+
+			&-title {
+				font-size: 20px;
+				margin-bottom: 9px;
+				line-height: 30px;
+			}
+		}
+	}
+	.plan-stats__card-value {
+		padding: 7px 0 0;
+	}
+}
+
+@media (max-width: 600px) {
+	.plan-stats {
+		&__title {
+			font-size: 24px;
+			line-height: 36px;
+		}
+
+		&__texts-shadow button {
+			left: 10px;
+			transform: translateX(0);
+		}
+	}
+}

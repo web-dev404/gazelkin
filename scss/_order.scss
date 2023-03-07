@@ -1,0 +1,503 @@
+.order {
+	margin-top: 90px;
+
+	&__cards,
+	&__bottom-cards {
+		gap: 20px;
+	}
+
+	&__bottom-cards {
+		margin-top: 20px;
+	}
+
+	&__bottom-card {
+		width: 33.333%;
+		padding: 40px;
+		border-radius: 20px;
+		background-color: #f3f3f3;
+		position: relative;
+		overflow: hidden;
+
+		&:nth-last-of-type(2) {
+			background-color: #1c120b;
+			color: #fff;
+
+			.normal-text {
+				color: #fff;
+			}
+		}
+
+		&-mobile {
+			margin-bottom: 40px;
+			position: relative;
+
+			&-title {
+				font-size: 20px;
+				font-weight: 500;
+				margin-bottom: 20px;
+			}
+		}
+
+		&-title {
+			font-size: 24px;
+			font-weight: 500;
+			line-height: 36px;
+			position: relative;
+			width: 85%;
+		}
+
+		&-text {
+			margin-top: 20px;
+			margin-bottom: 56px;
+			line-height: 24px;
+			font-size: 16px;
+			font-weight: 400;
+		}
+
+		.normal-btn {
+			padding: 19px 40px;
+		}
+
+		&-btn {
+			border-radius: 50%;
+			padding: 19px;
+			position: relative;
+		}
+
+		&-btn.red {
+			background-color: var(--main-red);
+		}
+
+		&-btn.white {
+			background-color: #fff;
+			box-shadow: 0px 5px 5px 0px #d2d2d2;
+		}
+
+		&-btn.red,
+		&-btn.white {
+			z-index: 10;
+			position: absolute;
+			bottom: 48px;
+			right: 35px;
+		}
+
+		&-delivery-man,
+		&-truck,
+		&-car {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+
+		&-delivery-man {
+			left: 0px;
+			bottom: 0px;
+		}
+
+		&-truck {
+			left: -12px;
+			bottom: 0;
+			width: 260px;
+		}
+	}
+
+	&__card {
+		border-radius: 20px;
+		width: 50%;
+		position: relative;
+		padding: 40px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		overflow: hidden;
+
+		&-form,
+		&-title,
+		&-text {
+			position: relative;
+			z-index: 2;
+		}
+
+		&:first-of-type {
+			background-color: #f7d247;
+
+			.order__card-btn {
+				background-color: #1c120b;
+				color: #fff;
+				padding: 18px 60px;
+			}
+		}
+
+		&:last-of-type {
+			background-image: url("../images/service-road-map.png");
+			background-size: cover;
+			background-position: center;
+
+			.order__card {
+				&-text,
+				&-title {
+					color: #fff;
+				}
+
+				&-btn {
+					background-color: #fff;
+					color: #1c120b;
+					padding: 18px 35px;
+				}
+			}
+		}
+
+		&-service-img {
+			position: absolute;
+			right: 0;
+			top: 0;
+			z-index: 1;
+		}
+
+		&-title {
+			font-size: 24px;
+			line-height: 36px;
+			font-weight: 500;
+		}
+
+		&-text {
+			margin-top: 16px;
+			margin-bottom: 30px;
+			width: 60%;
+			line-height: 24px;
+			font-size: 16px;
+			font-weight: 400;
+		}
+
+		&-form {
+			display: flex;
+			gap: 20px;
+		}
+
+		&-input {
+			width: 100%;
+			background-color: #ffffff;
+			padding: 16px;
+			border-radius: 12px;
+			border: 1px solid #ffffff;
+			transition: 0.3s all ease;
+
+			&:focus {
+				border-color: #055ada;
+			}
+		}
+
+		&-btn {
+			min-width: max-content;
+			border-radius: 16px;
+			cursor: pointer;
+		}
+
+		&-truck {
+			position: absolute;
+			top: -40px;
+			right: 5px;
+		}
+	}
+}
+
+@media (max-width: 1150px) {
+	.order__bottom-card-title.margin-bottom {
+		margin-bottom: 200px;
+	}
+
+	.order__bottom-card-delivery-man ~ .order__bottom-card-text {
+		margin-bottom: 130px;
+	}
+
+	.order__bottom-card-truck ~ .order__bottom-card-text {
+		margin-bottom: 130px;
+	}
+
+	.order__bottom-card-truck {
+		right: 100px;
+		display: none;
+		left: inherit;
+	}
+
+	.order__bottom-card-delivery-man {
+		right: 40px !important;
+		left: inherit !important;
+	}
+
+	.order__bottom-card-btn {
+		right: inherit !important;
+		left: 44px !important;
+	}
+
+	.order {
+		&__cards {
+			flex-direction: column;
+		}
+
+		&__card {
+			width: 100%;
+		}
+
+		&__bottom-cards {
+			flex-direction: column;
+		}
+
+		&__bottom-card {
+			width: 100%;
+
+			&:last-of-type::after {
+				content: "";
+				background-image: url(../images/parking/2.png);
+				width: 383px;
+				height: 178px;
+				display: block;
+				background-size: contain;
+				background-repeat: no-repeat;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				z-index: 1;
+			}
+
+			&-title {
+				width: 40%;
+			}
+
+			&-truck {
+				right: 0px;
+				bottom: 0;
+			}
+
+			&-delivery-man {
+				right: -64px !important;
+				bottom: -1px;
+			}
+
+			&-car {
+				display: block !important;
+			}
+		}
+	}
+
+	.order__bottom-card-car {
+		display: none !important;
+	}
+}
+
+@media (max-width: 768px) {
+	.order {
+		margin-top: 40px;
+
+		&__bottom-card {
+			&:first-of-type &-btn {
+				left: 0 !important;
+			}
+
+			&-text {
+				max-width: 522px;
+			}
+
+			&-title {
+				width: 80%;
+			}
+		}
+	}
+}
+
+@media (max-width: 668px) {
+	.order {
+		margin-top: 42px;
+	}
+	.order__card {
+		width: 96%;
+	}
+	.order__card:first-of-type .order__card-btn {
+		padding: 18px 48px;
+	}
+	.order__cards,
+	.order__bottom-cards {
+		gap: 18px;
+	}
+
+	.order__card-service-img {
+		width: 201px;
+		height: 234px;
+		object-fit: cover;
+	}
+	.order__card-text {
+		max-width: 65%;
+		margin-top: 16px;
+		margin-bottom: 27px;
+	}
+	.order__card {
+		padding: 30px 20px 30px 24px;
+
+		&-title {
+			font-size: 20px;
+			line-height: 30px;
+		}
+	}
+	.order__card:last-of-type {
+		padding: 30px 23px 33px 24px;
+		.order__card-text {
+			margin-bottom: 32px;
+		}
+	}
+	.order__card-form {
+		gap: 17px;
+	}
+	.order__card-input {
+		padding: 17px;
+	}
+	.order__card:last-of-type .order__card-btn {
+		padding: 15px 23px;
+	}
+	.order__bottom-card {
+		padding: 28px 22px 29px 22px;
+	}
+	.order__bottom-card-text {
+		max-width: 485px;
+	}
+	.order__bottom-card-text {
+		margin-top: 13px;
+		margin-bottom: 33px;
+	}
+	.order__bottom-card .normal-btn {
+		padding: 19px 56px;
+	}
+	.order__bottom-card {
+		max-width: 96%;
+	}
+	.order__bottom-card-delivery-man ~ .order__bottom-card-text {
+		max-width: 400px;
+		margin: 17px 0 92px 0;
+	}
+	.order__bottom-card-delivery-man {
+		right: -103px !important;
+	}
+	.order__bottom-card-btn.red,
+	.order__bottom-card-btn.white {
+		bottom: 31px;
+		left: 22px !important;
+	}
+	.order__bottom-card-title {
+		font-size: 20px;
+		line-height: 30px;
+	}
+	.order__bottom-card-title {
+		width: 40%;
+	}
+	.order__bottom-card-btn.red,
+	.order__bottom-card-btn.white {
+		bottom: 32px;
+		left: 24px !important;
+		padding: 17px;
+	}
+	.order__bottom-card-title.margin-bottom {
+		margin-bottom: 167px;
+	}
+	.order__bottom-card:last-of-type::after {
+		width: 348px;
+		height: 138px;
+		bottom: 23px;
+		right: -50px;
+	}
+}
+
+@media (max-width: 550px) {
+	.order {
+		&__card {
+			&-form {
+				flex-direction: column;
+			}
+		}
+
+		&__bottom-card {
+			padding-bottom: 180px;
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.order {
+		&__card:last-of-type {
+			padding-bottom: 220px;
+		}
+
+		&__card-truck {
+			top: initial;
+			bottom: 20px;
+			left: 60%;
+			transform: translateX(-50%);
+		}
+
+		&__bottom-card {
+			padding: 25px;
+			padding-bottom: 180px;
+
+			&:first-of-type {
+				padding-bottom: 25px;
+			}
+
+			&-mobile {
+				display: block !important;
+			}
+
+			&-car,
+			&-title,
+			&-text {
+				display: none !important;
+			}
+		}
+	}
+}
+
+@media (max-width: 400px) {
+	.order {
+		&__card {
+			padding: 24px 24px 241px;
+			background-image: url(../images/road-line.png) !important;
+			background-size: 292px 310px !important;
+			background-position: 66px 289px !important;
+			background-repeat: no-repeat;
+			background-color: #e94a44;
+			position: relative;
+
+			&:last-of-type {
+				padding-bottom: 199px;
+			}
+
+			&::after {
+				content: "";
+				background-image: url(../images/road-map.png);
+				width: 226.15px;
+				height: 201.1px;
+				background-repeat: no-repeat;
+				position: absolute;
+				bottom: -34px;
+				left: 69px;
+			}
+
+			&-title {
+				font-size: 20px;
+			}
+
+			&-text {
+				min-width: 100%;
+			}
+
+			&-service-img {
+				bottom: 0;
+				top: inherit;
+				right: inherit;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+
+		&__bottom-card-mobile .on-desktop {
+			display: none;
+		}
+	}
+}

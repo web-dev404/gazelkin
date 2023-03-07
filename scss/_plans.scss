@@ -1,0 +1,269 @@
+.plans {
+	margin-bottom: 90px;
+
+	&__title {
+		font-size: 32px;
+		font-weight: 600;
+		margin-bottom: 35px;
+	}
+
+	.normal-text {
+		width: 550px;
+		margin-bottom: 40px;
+	}
+
+	&__tabs {
+		display: flex;
+		gap: 20px;
+		justify-content: space-between;
+		margin-bottom: 20px;
+	}
+
+	&__tab {
+		width: 33.333%;
+		padding: 25px;
+		border-radius: 20px;
+		font-size: 18px;
+		font-weight: 500;
+		border: 2px solid #e0e0e0;
+		position: relative;
+		text-align: center;
+		cursor: pointer;
+
+		&.active {
+			font-weight: 500;
+		}
+
+		&-icon {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 25px;
+			display: none;
+			width: 12px;
+			height: 12px;
+			background-color: #000;
+			border-radius: 50%;
+		}
+	}
+
+	[type="radio"] {
+		display: none;
+	}
+
+	#plans-radio-1:checked ~ #plans-group-1 {
+		display: flex;
+	}
+
+	#plans-radio-1:checked ~ &__tabs > [for="plans-radio-1"] {
+		background-color: #f7d247;
+		border-color: #f7d247;
+
+		.plans__tab-icon {
+			display: block;
+		}
+	}
+
+	#plans-radio-2:checked ~ #plans-group-2 {
+		display: flex;
+	}
+
+	#plans-radio-2:checked ~ &__tabs > [for="plans-radio-2"] {
+		background-color: #f3f3f3;
+		border-color: #f3f3f3;
+
+		.plans__tab-icon {
+			display: block;
+		}
+	}
+
+	#plans-radio-3:checked ~ #plans-group-3 {
+		display: flex;
+	}
+
+	#plans-radio-3:checked ~ &__tabs > [for="plans-radio-3"] {
+		background-color: #1c120b;
+		border-color: #1c120b;
+		color: #fff;
+
+		.plans__tab-icon {
+			display: block;
+			background: #fff;
+		}
+	}
+
+	#plans-group-3 .plans__card-btn {
+		background-color: #f7d247;
+		color: #1c120b;
+	}
+
+	&__cards {
+		display: none;
+		gap: 20px;
+		justify-content: space-between;
+		overflow-x: auto;
+		padding-bottom: 20px;
+	}
+
+	&__cards#plans-group-1 &__card {
+		background: radial-gradient(
+			48.53% 93.85% at 81.46% 75.68%,
+			#f7d247 0%,
+			#f4b514 100%
+		);
+	}
+
+	&__cards#plans-group-2 &__card {
+		background: #f3f3f3 !important;
+	}
+
+	&__cards#plans-group-3 &__card {
+		background: #1c120b;
+		color: #fff;
+	}
+
+	&__card {
+		border-radius: 20px;
+		padding: 40px;
+		width: 33.333%;
+		min-width: 304px;
+
+		&-title {
+			font-size: 24px;
+			font-weight: 500;
+			margin-bottom: 20px;
+		}
+
+		&-descr {
+			font-size: 18px;
+			margin-bottom: 50px;
+		}
+
+		&-img {
+			width: 100%;
+			margin-bottom: 40px;
+		}
+
+		&-feature {
+			display: flex;
+			padding: 6px 0 5px;
+			border-bottom: 1px dashed #1c120b3d;
+			display: flex;
+			justify-content: space-between;
+			min-width: max-content;
+		}
+
+		&-btn {
+			margin-top: 40px;
+			border-radius: 16px;
+			background-color: #1c120b;
+			color: #fff;
+			padding: 19px;
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	.plans {
+		&__tab {
+			padding: 24px 12px;
+			border-radius: 20px;
+			font-weight: 400;
+			font-size: 18px;
+
+			// &-icon {
+			//   display: none !important;
+			// }
+		}
+	}
+}
+
+@media (max-width: 670px) {
+	.plans {
+		margin-bottom: 26px;
+
+		&__card {
+			padding: 24px;
+
+			&-title {
+				font-size: 20px;
+			}
+
+			&-descr {
+				margin-bottom: 30px;
+				font-size: 16px;
+			}
+		}
+
+		&__title {
+			font-size: 24px;
+			margin-bottom: 16px;
+		}
+
+		&__text {
+			position: relative;
+			overflow: hidden;
+			margin-bottom: 20px;
+
+			&-shadow {
+				display: block !important;
+				position: absolute;
+				bottom: 0px;
+				left: 0;
+				box-shadow: 0px 0px 100px 120px #fff;
+				width: 100%;
+
+				button {
+					position: absolute;
+					bottom: 15px;
+					font-size: 25px;
+					left: 5px;
+				}
+			}
+		}
+		.plans__card-img {
+			margin-bottom: 28px;
+		}
+		.plans__tabs {
+			gap: 29px;
+			margin-bottom: 30px;
+		}
+		.plans__card-btn {
+			margin-top: 43px;
+		}
+		.plans__cards {
+			gap: 16px;
+		}
+		&__tab {
+			padding: 24px 20px;
+			padding-top: 15px;
+			padding-bottom: 19px;
+			font-weight: 400 !important;
+			font-size: 15px;
+			&-icon {
+				width: 8px;
+				height: 8px;
+			}
+		}
+
+		.normal-text {
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: 530px) {
+	.plans__tab {
+		&-icon {
+			display: none !important;
+		}
+	}
+}
+
+@media (max-width: 380px) {
+	.plans__tabs {
+		gap: 8px;
+		margin-bottom: 8px;
+	}
+}

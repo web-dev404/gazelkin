@@ -1,0 +1,101 @@
+.preferences {
+	margin-top: 80px;
+	margin-bottom: 80px;
+	padding: 40px;
+	background-color: #f3f3f3;
+	border-radius: 20px;
+
+	&__title {
+		font-size: 32px;
+		line-height: 37.5px;
+		font-weight: 600;
+		margin-bottom: 50px;
+	}
+
+	&__cards {
+		display: flex;
+		gap: 70px;
+	}
+
+	&__card {
+		width: 25%;
+
+		&-icon {
+			width: 48px;
+			height: 48px;
+			background-color: var(--main-yellow);
+			border-radius: 50%;
+			display: grid;
+			place-content: center;
+			margin-bottom: 20px;
+		}
+
+		&-name {
+			font-size: 18px;
+			font-weight: 500;
+		}
+
+		&-descr {
+			line-height: 24px;
+			margin-top: 12px;
+			max-width: 200px;
+		}
+	}
+}
+
+@media (max-width: 950px) {
+	.preferences {
+		&__cards {
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 0;
+			row-gap: 40px;
+		}
+
+		&__card {
+			width: 49%;
+		}
+	}
+}
+
+@media (max-width: 750px) {
+	.preferences {
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+}
+
+@media (max-width: 668px) {
+	.preferences {
+		margin-top: 40px;
+		margin-bottom: 36px;
+	}
+	.preferences__title {
+		font-size: 24px;
+		line-height: 36px;
+		font-weight: 500;
+		margin-bottom: 43px;
+	}
+	.preferences__card {
+		width: 39.5%;
+	}
+	.preferences__cards {
+		row-gap: 42px;
+	}
+}
+
+@media (max-width: 500px) {
+	.preferences {
+		padding: 24px;
+
+		&__title {
+			margin-bottom: 24px;
+			font-size: 24px;
+			font-weight: 500;
+		}
+
+		&__card {
+			width: 100%;
+		}
+	}
+}

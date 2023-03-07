@@ -1,0 +1,331 @@
+.cost-calc {
+	background-color: #f3f3f3;
+	padding: 80px 0;
+	margin-bottom: 80px;
+
+	.form-label-date-select {
+		margin-bottom: 30px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		cursor: pointer;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 150%;
+	}
+
+	&__title {
+		font-size: 32px;
+		font-weight: 600;
+		line-height: 37.5px;
+		margin-bottom: 40px;
+		width: 350px;
+	}
+
+	&__form {
+		display: flex;
+		gap: 82px;
+
+		&-left {
+			width: 35%;
+
+			.form {
+				&-radios {
+					gap: 8px 0;
+					margin-bottom: 40px;
+
+					&-title {
+						font-size: 18px;
+						color: #1c120b;
+					}
+				}
+
+				&-label {
+					margin-bottom: 20px;
+				}
+			}
+		}
+
+		&-right {
+			width: 65%;
+
+			&-inputs {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-around;
+				row-gap: 24px;
+
+				.form-label {
+					width: 48%;
+				}
+			}
+
+			&-add-btn {
+				margin-top: 40px !important;
+				display: flex;
+				align-items: center;
+				gap: 10px;
+
+				span {
+					font-size: 18px;
+				}
+			}
+
+			&-total {
+				margin-top: 10px;
+				text-align: end;
+				font-size: 24px;
+				font-weight: 500;
+			}
+
+			.normal-text {
+				text-align: end;
+				margin-top: 8px;
+			}
+
+			.normal-btn {
+				margin-left: auto;
+				display: block;
+				padding: 19px 80px;
+				margin-top: 24px;
+				margin-bottom: 20px;
+			}
+
+			&-bottom {
+				&-title {
+					font-size: 16px;
+					font-weight: 400;
+					color: #797979;
+					text-align: end;
+					margin-bottom: 8px;
+				}
+
+				&-text {
+					width: 80%;
+					margin-left: auto;
+					color: #797979;
+					font-size: 12px;
+					text-align: end;
+
+					a {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+
+		&-bottom {
+			display: flex;
+			justify-content: space-between;
+
+			&-left {
+				width: 50%;
+				margin-left: 5px;
+			}
+
+			&-right {
+				margin-top: 50px;
+				width: 50%;
+			}
+
+			&-additionals {
+				display: flex;
+				flex-direction: column;
+				gap: 24px;
+				margin-top: 28px;
+			}
+
+			&-additional {
+				display: flex;
+				gap: 8px;
+
+				&-texts {
+					p {
+						font-size: 16px;
+						margin-bottom: 10px;
+					}
+
+					span {
+						color: #797979;
+						font-size: 16px;
+						max-width: 276px;
+						display: inline-block;
+					}
+
+					b {
+						font-weight: 500;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.cost-calc__form {
+		gap: 30px;
+	}
+}
+
+@media (max-width: 850px) {
+	.cost-calc {
+		margin-bottom: 40px;
+
+		&__form {
+			flex-direction: column;
+
+			&-bottom {
+				flex-direction: column;
+
+				&-left,
+				&-right {
+					width: 100%;
+				}
+			}
+
+			& > div {
+				width: 100%;
+			}
+
+			.normal-btn {
+				width: 100%;
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.cost-calc {
+		padding-bottom: 40px;
+	}
+}
+
+@media (max-width: 668px) {
+	.cost-calc {
+		padding-top: 40px;
+		padding-bottom: 42px;
+
+		&__title {
+			font-size: 24px;
+			line-height: 36px;
+			font-weight: 500;
+			margin-bottom: 44px;
+		}
+
+		&__form {
+			&-left .form-radios {
+				row-gap: 17px;
+
+				&-title {
+					font-size: 16px;
+				}
+			}
+
+			&-right {
+				&-inputs {
+					row-gap: 25px;
+
+					.form-label {
+						margin-top: 0;
+					}
+
+					.order-on-mobile {
+						order: 5;
+					}
+				}
+
+				&-bottom-text {
+					max-width: 321px;
+				}
+			}
+
+			&-bottom {
+				&-left {
+					&.on-desktop {
+						display: none;
+					}
+
+					&.on-mobile {
+						display: flex;
+					}
+
+					.cost-calc__form-right-add-btn {
+						margin-top: 11px !important;
+						margin-bottom: 14px;
+					}
+				}
+
+				&-right {
+					margin-top: 38px;
+				}
+			}
+		}
+	}
+	.cost-calc__form-right .normal-btn {
+		margin-bottom: 19px;
+	}
+	.cost-calc__form-right .normal-btn {
+		padding: 18px 80px;
+	}
+	.cost-calc__form-right-total {
+		margin-top: 2px;
+	}
+	.cost-calc__form-right .normal-text {
+		margin-top: 14px;
+	}
+	.cost-calc__form-bottom-left {
+		margin-left: 0;
+	}
+	.form-radios-labels {
+		column-gap: 38px !important;
+	}
+	.cost-calc .form-label-date-select {
+		margin-bottom: 39px;
+	}
+	.cost-calc__form-bottom-left .cost-calc__form-right-add-btn {
+		margin-top: 2px !important;
+	}
+	.cost-calc__form-left .form-label {
+		margin-bottom: 23px;
+	}
+	.form-add-btn {
+		margin-left: 18px !important;
+	}
+	.cost-calc__form {
+		row-gap: 43px;
+	}
+}
+
+@media (max-width: 500px) {
+	.cost-calc {
+		padding-top: 40px;
+		padding-bottom: 40px;
+
+		&__title {
+			width: 100%;
+			font-size: 24px;
+			line-height: 36px;
+			font-weight: 500;
+		}
+
+		&__form-right {
+			&-inputs {
+				flex-direction: column;
+
+				.form-label {
+					width: 100%;
+				}
+			}
+
+			&-bottom {
+				&-title,
+				&-text {
+					text-align: center;
+					width: 100%;
+				}
+			}
+		}
+	}
+}

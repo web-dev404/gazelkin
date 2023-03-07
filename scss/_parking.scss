@@ -1,0 +1,386 @@
+.parking {
+	& > &__card-details-title,
+	& > &__card-flex {
+		display: none;
+	}
+
+	&__stats {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 56px;
+		margin-bottom: 80px;
+		gap: 100px;
+	}
+
+	&__stat {
+		width: 25%;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+
+		&-item {
+			&-value {
+				font-size: 40px;
+				font-weight: 500;
+			}
+
+			&-name {
+				font-size: 20px;
+				font-weight: 500;
+			}
+
+			&-descr {
+				line-height: 21px;
+				font-size: 14px;
+				font-weight: 400;
+				max-width: 217px;
+			}
+		}
+	}
+
+	.swiper {
+		height: 0;
+		overflow: hidden;
+
+		&.active {
+			height: auto;
+			overflow: visible;
+		}
+	}
+
+	&__title {
+		font-size: 32px;
+		margin-bottom: 20px;
+		font-weight: 500;
+	}
+
+	.normal-text {
+		margin-bottom: 16px;
+	}
+
+	&__tabs {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 16px;
+	}
+
+	&__tab {
+		border: 1px solid #e0e0e0;
+		border-radius: 16px;
+		padding: 12px 24px;
+		font-size: 14px;
+		font-weight: 500;
+
+		&.active {
+			background-color: #f3f3f3;
+		}
+	}
+
+	&__card {
+		margin-top: 40px;
+		margin-bottom: 20px;
+		border-radius: 20px;
+		background-color: #1c120b;
+		color: #fff;
+		padding: 40px;
+		padding-bottom: 20px;
+		display: none;
+
+		&.active {
+			display: block;
+		}
+
+		&-flex {
+			display: flex;
+			gap: 50px;
+		}
+
+		&-details {
+			width: 45%;
+			display: flex;
+			flex-direction: column;
+			margin-top: 45px;
+
+			&-title {
+				font-size: 24px;
+				font-weight: 500;
+				display: flex;
+				align-items: center;
+
+				img {
+					padding-left: 16px;
+				}
+			}
+		}
+
+		&-features {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			margin-bottom: 40px;
+			max-width: 324px;
+		}
+
+		&-feature {
+			display: flex;
+			justify-content: space-between;
+			border-bottom: 1px dashed #ffffff66;
+			padding-bottom: 5px;
+
+			&-value {
+				color: #f7d247;
+			}
+		}
+
+		&-bottom {
+			display: flex;
+			align-items: center;
+			gap: 24px;
+
+			&-btn {
+				padding-left: 62px !important;
+				padding-right: 62px !important;
+			}
+		}
+
+		&-price {
+			text-align: center;
+
+			&-name {
+				font-size: 16px;
+			}
+
+			&-value {
+				font-size: 32px;
+			}
+		}
+
+		&-img {
+			width: 65%;
+			max-height: 270px;
+			object-fit: contain;
+		}
+	}
+
+	&__gallery {
+		display: flex;
+		align-items: center;
+
+		&-item {
+			padding: 34px 22px 50px;
+			border-radius: 20px;
+			background-color: #f3f3f3;
+			cursor: pointer;
+
+			&.active {
+				background-color: #1c120b;
+				color: #fff;
+			}
+
+			&-img {
+				width: 100%;
+				max-height: 100px;
+				object-fit: contain;
+				margin-bottom: 16px;
+			}
+
+			&-name {
+				font-size: 20px;
+				font-weight: 500;
+				line-height: 30px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1300px) {
+	.parking {
+		&__card {
+			&-flex {
+				flex-direction: column-reverse;
+			}
+
+			&-img {
+				width: 100%;
+				display: block;
+				margin: auto;
+			}
+
+			&-details {
+				width: 100%;
+				margin-top: 0;
+				flex-direction: row;
+				gap: 56px;
+				align-items: end;
+
+				& > div:first-of-type {
+					width: 50%;
+				}
+			}
+
+			&-bottom {
+				flex-direction: column-reverse;
+				width: 50%;
+
+				&-btn {
+					width: 100%;
+				}
+			}
+
+			&-price {
+				width: 100%;
+				min-width: max-content;
+			}
+
+			&-features {
+				width: 100% !important;
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+@media (max-width: 1000px) {
+	.parking {
+		&__stats {
+			flex-wrap: wrap;
+			gap: 0;
+			row-gap: 50px;
+			justify-content: space-between;
+		}
+
+		&__stat {
+			width: 48%;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.parking__card {
+		margin-top: 20px;
+	}
+}
+
+@media (max-width: 668px) {
+	.parking {
+		&__stats {
+			margin-bottom: 56px;
+		}
+
+		&__card {
+			padding: 24px 20px 36px 24px;
+
+			&-img {
+				width: 100%;
+			}
+
+			&-details {
+				gap: 30px;
+
+				&-title {
+					font-size: 24px;
+					line-height: 36px;
+					font-weight: 500;
+				}
+			}
+
+			&-price-value {
+				font-weight: 500;
+			}
+		}
+	}
+	.parking__title {
+		font-size: 23px;
+	}
+	.parking__card-details {
+		gap: 0;
+		justify-content: space-between;
+	}
+	.parking__stat {
+		width: 43%;
+	}
+	.parking__stat-item-descr {
+		max-width: 197px;
+	}
+	.parking__card-details > div:first-of-type {
+		width: 51%;
+	}
+	.parking__card-bottom-btn {
+		width: 88%;
+	}
+	.parking__stats {
+		row-gap: 55px;
+		margin-bottom: 58px;
+	}
+	.parking__card-details-title {
+		line-height: 28px;
+		margin-bottom: 33px;
+	}
+	.parking__card-flex {
+		gap: 2px;
+	}
+	.parking__card-bottom {
+		align-items: flex-end;
+		gap: 17px;
+	}
+}
+
+@media (max-width: 600px) {
+	.parking {
+		&__tab {
+			padding: 12px 24px;
+		}
+
+		.normal-text {
+			width: 100%;
+		}
+
+		&__card {
+			&-img {
+				width: 100%;
+			}
+
+			&-flex {
+				gap: 20px;
+			}
+
+			&-details {
+				flex-direction: column;
+				gap: 30px;
+
+				& > div:first-of-type {
+					width: 100%;
+				}
+			}
+
+			&-bottom {
+				width: 100%;
+			}
+
+			&-features {
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.parking {
+		&__tabs {
+			display: grid;
+			grid-template-columns: auto auto auto;
+			overflow-x: auto;
+			padding-bottom: 15px;
+		}
+
+		&__tab {
+			width: max-content;
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.parking__stat {
+		width: 100%;
+	}
+}
