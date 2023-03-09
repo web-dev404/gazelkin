@@ -118,6 +118,7 @@
 @media (max-width: 668px) {
 	.contact {
 		margin-bottom: 40px;
+		margin-top: 40px;
 		padding: 36px 40px 41px;
 
 		&__title {
@@ -125,7 +126,7 @@
 		}
 
 		&__text {
-			min-width: 475px;
+			max-width: 475px;
 			margin-top: 15px;
 			margin-bottom: 40px;
 		}

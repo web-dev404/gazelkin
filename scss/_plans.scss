@@ -162,6 +162,11 @@
 			width: 100%;
 		}
 	}
+	&__card-count {
+		&::after {
+			content: "Количество грузчиков";
+		}
+	}
 }
 
 @media (max-width: 800px) {
@@ -198,7 +203,7 @@
 
 		&__title {
 			font-size: 24px;
-			margin-bottom: 16px;
+			margin-bottom: 26px;
 		}
 
 		&__text {
@@ -222,6 +227,11 @@
 				}
 			}
 		}
+		.plans__card-count {
+			&::after {
+				content: "Кол-во грузчиков";
+			}
+		}
 		.plans__card-img {
 			margin-bottom: 28px;
 		}
@@ -230,10 +240,15 @@
 			margin-bottom: 30px;
 		}
 		.plans__card-btn {
-			margin-top: 43px;
+			margin-top: 40px;
 		}
 		.plans__cards {
 			gap: 16px;
+		}
+		.plans__cards {
+			position: relative;
+			right: -15px;
+			margin-left: -15px;
 		}
 		&__tab {
 			padding: 24px 20px;
@@ -248,8 +263,13 @@
 		}
 
 		.normal-text {
+			max-width: 575px;
 			width: 100%;
+			margin-bottom: 22px;
 		}
+	}
+	.plan-stats__cards {
+		margin-top: 73px !important;
 	}
 }
 

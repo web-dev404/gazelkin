@@ -317,7 +317,8 @@
 	}
 	.order__cards,
 	.order__bottom-cards {
-		gap: 18px;
+		margin-top: 15px;
+		gap: 17px;
 	}
 
 	.order__card-service-img {
@@ -345,7 +346,7 @@
 		}
 	}
 	.order__card-form {
-		gap: 17px;
+		gap: 18px;
 	}
 	.order__card-input {
 		padding: 17px;
@@ -354,13 +355,13 @@
 		padding: 15px 23px;
 	}
 	.order__bottom-card {
-		padding: 28px 22px 29px 22px;
+		padding: 29px 22px 29px 22px;
 	}
 	.order__bottom-card-text {
 		max-width: 485px;
 	}
 	.order__bottom-card-text {
-		margin-top: 13px;
+		margin-top: 16px;
 		margin-bottom: 33px;
 	}
 	.order__bottom-card .normal-btn {
@@ -390,18 +391,23 @@
 	}
 	.order__bottom-card-btn.red,
 	.order__bottom-card-btn.white {
-		bottom: 32px;
-		left: 24px !important;
+		bottom: 34px;
+		left: 25px !important;
 		padding: 17px;
 	}
 	.order__bottom-card-title.margin-bottom {
 		margin-bottom: 167px;
 	}
 	.order__bottom-card:last-of-type::after {
-		width: 348px;
-		height: 138px;
-		bottom: 23px;
-		right: -50px;
+		width: 340px;
+		height: 154px;
+		bottom: 20px;
+		right: -13px;
+	}
+	.order__card:last-of-type {
+		background-color: #e94a44;
+		background-position: 46px -9px;
+		background-repeat: no-repeat;
 	}
 }
 

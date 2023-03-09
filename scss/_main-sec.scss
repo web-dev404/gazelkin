@@ -207,17 +207,21 @@
 	.main-sec__slider-btn {
 		padding: 17px 43px !important;
 		margin-top: 29px;
-		margin-bottom: 80px;
+		margin-bottom: 82px;
 	}
 	.main-sec__slider {
 		padding: 16px 24px 0px;
 	}
 	.main-sec__slider-pags {
-		left: 22px;
-		bottom: 22px;
+		left: 24px;
+		bottom: 23px;
+	}
+	.form-input-icon {
+		padding-top: 5px;
+		margin-right: 12px !important;
 	}
 	.main-sec__form {
-		padding: 39px 15px;
+		padding: 37px 15px;
 	}
 	.main-sec__form-title {
 		margin-bottom: 25px;
@@ -236,7 +240,11 @@
 		}
 	}
 	.main-sec__form .form-label:last-of-type {
+		margin-top: 23px;
 		margin-bottom: 15px;
+	}
+	.main-sec__form-labels {
+		column-gap: 38px !important;
 	}
 }
 

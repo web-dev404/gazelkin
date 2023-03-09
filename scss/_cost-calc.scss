@@ -279,7 +279,7 @@
 		margin-left: 0;
 	}
 	.form-radios-labels {
-		column-gap: 38px !important;
+		column-gap: 32px !important;
 	}
 	.cost-calc .form-label-date-select {
 		margin-bottom: 39px;
@@ -295,6 +295,11 @@
 	}
 	.cost-calc__form {
 		row-gap: 43px;
+	}
+	.cost-calc {
+		.form-radios-labels {
+			column-gap: 38px !important;
+		}
 	}
 }
 

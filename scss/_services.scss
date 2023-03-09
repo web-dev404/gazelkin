@@ -125,6 +125,9 @@
 
 @media (max-width: 668px) {
 	.services {
+		.section-text-link {
+			max-width: 545px;
+		}
 		margin-bottom: 56px;
 
 		&__title {
@@ -138,7 +141,7 @@
 
 		.form-label {
 			display: flex !important;
-			margin-top: 40px;
+			margin-top: 46px;
 		}
 
 		&__item {

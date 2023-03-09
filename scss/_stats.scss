@@ -94,7 +94,7 @@
 					box-shadow: 0 0 0 0 #fff;
 
 					button {
-						bottom: -40px;
+						bottom: 0;
 						transform: rotate(180deg);
 					}
 				}
@@ -184,7 +184,7 @@
 			margin-bottom: 19px;
 		}
 		&__right-text {
-			max-width: 545px;
+			max-width: 570px;
 		}
 	}
 	.stats__left-card {
@@ -206,6 +206,9 @@
 	}
 	.stats__top-img img {
 		width: 540px;
+	}
+	.stats__bottom-col {
+		gap: 51px;
 	}
 }
 
