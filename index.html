@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/datetimepicker.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.css">
   <link href="https://cdn.jsdelivr.net/npm/air-datepicker@3.3.5/air-datepicker.min.css" rel="stylesheet">
@@ -13,6 +14,8 @@
 </head>
 
 <body>
+  <div id="picker"> </div>
+  <input type="hidden" id="result" value="">
 
   <header class="header">
     <div class="header__top">
@@ -492,170 +495,445 @@
   <section class="main-sec flex container">
     <div class="main-sec__form">
       <h4 class="main-sec__form-title">Закажи на сайте со скидкой до 35%</h4>
-      <div class="main-sec__form-cards">
-        <div class="main-sec__form-card">
-          <p class="normal-text">
-            <span>Шаг 1:</span>
-            <span class="text-gray">Маршрут и время</span>
-          </p>
-          <label class="form-label">
-            <span class="form-label-span text-gray">Откуда</span>
-            <input type="text" placeholder="Киевская 13" value="Киевская 13" class="form-input clear-feature" />
-            <img src="./icons/input-main.png" alt="Main" class="form-input-icon loc-icon" />
-            <div class="loc-select">
-              <div class="loc-select__map">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d67461.4604064471!2d64.3677926458177!3d41.485461656860856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1673039182714!5m2!1sen!2s"
-                  style="border:0;" allowfullscreen="" loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"></iframe>
-                <div class="loc-select__map-btns">
-                  <button type="button">Добавить</button>
-                  <button type="button" class="loc-select__close">Отмена</button>
+      <div class="main-sec__step">
+        <div class="main-sec__form-cards">
+          <div class="main-sec__form-card">
+            <p class="normal-text">
+              <span>Шаг 1:</span>
+              <span class="text-gray">Маршрут и время</span>
+            </p>
+            <label class="form-label">
+              <span class="form-label-span text-gray">Откуда</span>
+              <input type="text" placeholder="Киевская 13" value="Киевская 13" class="form-input clear-feature" />
+              <img src="./icons/input-main.png" alt="Main" class="form-input-icon loc-icon" />
+              <div class="loc-select">
+                <div class="loc-select__map">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d67461.4604064471!2d64.3677926458177!3d41.485461656860856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1673039182714!5m2!1sen!2s"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  <div class="loc-select__map-btns">
+                    <button type="button">Добавить</button>
+                    <button type="button" class="loc-select__close">Отмена</button>
+                  </div>
+                </div>
+                <div class="loc-select__details">
+                  <div class="loc-select__details-left">
+                    <span class="loc-select__details-left-text">Откуда</span>
+                    <span class="loc-select__details-left-title">Киевская 13</span>
+                  </div>
+                  <div class="loc-select__details-right">
+                    <button type="button" class="normal-btn loc-select__details-right-btn">Выбрать</button>
+                    <button type="button" class="loc-select__details-right-x loc-select__close">
+                      <i class="bi bi-x"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="loc-select__bg"></div>
+              </div>
+              <div class="loc-select">
+                <div class="loc-select__map">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d67461.4604064471!2d64.3677926458177!3d41.485461656860856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1673039182714!5m2!1sen!2s"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  <div class="loc-select__map-btns">
+                    <button type="button">Добавить</button>
+                    <button type="button" class="loc-select__close">Отмена</button>
+                  </div>
+                </div>
+                <div class="loc-select__details">
+                  <div class="loc-select__details-left">
+                    <span class="loc-select__details-left-text">Откуда</span>
+                    <span class="loc-select__details-left-title">Киевская 13</span>
+                  </div>
+                  <div class="loc-select__details-right">
+                    <button type="button" class="normal-btn loc-select__details-right-btn">Выбрать</button>
+                    <button type="button" class="loc-select__details-right-x loc-select__close">
+                      <i class="bi bi-x"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="loc-select__bg"></div>
+              </div>
+            </label>
+            <label class="form-label">
+              <span class="form-label-span text-gray">Куда</span>
+              <input type="text" placeholder="Киевская 140" value="Киевская 140" class="form-input clear-feature" />
+              <img src="./icons/input-main.png" alt="Main" class="form-input-icon loc-icon" />
+              <div class="loc-select">
+                <div class="loc-select__map">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d67461.4604064471!2d64.3677926458177!3d41.485461656860856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1673039182714!5m2!1sen!2s"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  <div class="loc-select__map-btns">
+                    <button type="button">Добавить</button>
+                    <button type="button" class="loc-select__close">Отмена</button>
+                  </div>
+                </div>
+                <div class="loc-select__details">
+                  <div class="loc-select__details-left">
+                    <span class="loc-select__details-left-text">Откуда</span>
+                    <span class="loc-select__details-left-title">Киевская 13</span>
+                  </div>
+                  <div class="loc-select__details-right">
+                    <button type="button" class="normal-btn loc-select__details-right-btn">Выбрать</button>
+                    <button type="button" class="loc-select__details-right-x loc-select__close">
+                      <i class="bi bi-x"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="loc-select__bg"></div>
+              </div>
+            </label>
+            <div class="additional_addresses"></div>
+            <button class="form-add-btn add_address">
+              <img src="./icons/add-circle.png" alt="Add" />
+              <span class="form-add-text">Добавить адрес</span>
+            </button>
+            <div class="modal" id="promocode-modal">
+              <div class="modal__main">
+                <button class="modal__close">
+                  <i class="bi bi-x"></i>
+                </button>
+                <div class="modal__content">
+                  <h4 class="modal__title">Активировать купон</h4>
+                  <div class="modal__form">
+                    <label class="form-label">
+                      <span class="form-label-span">Купон</span>
+                      <input type="text" placeholder="2345" class="form-input clear-feature" />
+                    </label>
+                    <button class="normal-btn modal__btn">Отправить</button>
+                    <span class="modal__subtext"> Даже если нечаянно закрыли попап - введенные данные сохранятся, пока
+                      вы
+                      не удалите их самостоятельно! </span>
+                  </div>
                 </div>
               </div>
-              <div class="loc-select__details">
-                <div class="loc-select__details-left">
-                  <span class="loc-select__details-left-text">Откуда</span>
-                  <span class="loc-select__details-left-title">Киевская 13</span>
-                </div>
-                <div class="loc-select__details-right">
-                  <button type="button" class="normal-btn loc-select__details-right-btn">Выбрать</button>
-                  <button type="button" class="loc-select__details-right-x loc-select__close">
-                    <i class="bi bi-x"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="loc-select__bg"></div>
+              <div class="modal__bg"></div>
             </div>
-            <div class="loc-select">
-              <div class="loc-select__map">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d67461.4604064471!2d64.3677926458177!3d41.485461656860856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1673039182714!5m2!1sen!2s"
-                  style="border:0;" allowfullscreen="" loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"></iframe>
-                <div class="loc-select__map-btns">
-                  <button type="button">Добавить</button>
-                  <button type="button" class="loc-select__close">Отмена</button>
-                </div>
-              </div>
-              <div class="loc-select__details">
-                <div class="loc-select__details-left">
-                  <span class="loc-select__details-left-text">Откуда</span>
-                  <span class="loc-select__details-left-title">Киевская 13</span>
-                </div>
-                <div class="loc-select__details-right">
-                  <button type="button" class="normal-btn loc-select__details-right-btn">Выбрать</button>
-                  <button type="button" class="loc-select__details-right-x loc-select__close">
-                    <i class="bi bi-x"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="loc-select__bg"></div>
-            </div>
-          </label>
-          <label class="form-label">
-            <span class="form-label-span text-gray">Куда</span>
-            <input type="text" placeholder="Киевская 140" value="Киевская 140" class="form-input clear-feature" />
-            <img src="./icons/input-main.png" alt="Main" class="form-input-icon loc-icon" />
-            <div class="loc-select">
-              <div class="loc-select__map">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d67461.4604064471!2d64.3677926458177!3d41.485461656860856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1673039182714!5m2!1sen!2s"
-                  style="border:0;" allowfullscreen="" loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"></iframe>
-                <div class="loc-select__map-btns">
-                  <button type="button">Добавить</button>
-                  <button type="button" class="loc-select__close">Отмена</button>
-                </div>
-              </div>
-              <div class="loc-select__details">
-                <div class="loc-select__details-left">
-                  <span class="loc-select__details-left-text">Откуда</span>
-                  <span class="loc-select__details-left-title">Киевская 13</span>
-                </div>
-                <div class="loc-select__details-right">
-                  <button type="button" class="normal-btn loc-select__details-right-btn">Выбрать</button>
-                  <button type="button" class="loc-select__details-right-x loc-select__close">
-                    <i class="bi bi-x"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="loc-select__bg"></div>
-            </div>
-          </label>
-          <div class="additional_addresses"></div>
-          <button class="form-add-btn add_address">
-            <img src="./icons/add-circle.png" alt="Add" />
-            <span class="form-add-text">Добавить адрес</span>
-          </button>
-          <div class="modal" id="promocode-modal">
-            <div class="modal__main">
-              <button class="modal__close">
-                <i class="bi bi-x"></i>
-              </button>
-              <div class="modal__content">
-                <h4 class="modal__title">Активировать купон</h4>
-                <div class="modal__form">
-                  <label class="form-label">
-                    <span class="form-label-span">Купон</span>
-                    <input type="text" placeholder="2345" class="form-input clear-feature" />
-                  </label>
-                  <button class="normal-btn modal__btn">Отправить</button>
-                  <span class="modal__subtext"> Даже если нечаянно закрыли попап - введенные данные сохранятся, пока вы
-                    не удалите их самостоятельно! </span>
-                </div>
+          </div>
+          <div class="main-sec__form-card">
+            <div class="form-radios">
+              <span class="form-radios-title">Время подачи:</span>
+              <div class="form-radios-labels main-sec__form-labels">
+                <label class="form-radios-label">
+                  <input type="radio" name="radasdio-1" class="form-radio" checked />
+                  <div class="form-radio-shape"></div>
+                  <span class="form-radio-text">20 мин</span>
+                </label>
+                <label class="form-radios-label">
+                  <input type="radio" name="radasdio-1" class="form-radio" />
+                  <div class="form-radio-shape"></div>
+                  <span class="form-radio-text">30 мин</span>
+                </label>
+                <label class="form-radios-label">
+                  <input type="radio" name="radasdio-1" class="form-radio" />
+                  <div class="form-radio-shape"></div>
+                  <span class="form-radio-text">1 час</span>
+                </label>
               </div>
             </div>
-            <div class="modal__bg"></div>
+            <label class="form-label">
+              <span class="form-label-span text-gray">Дата и время</span>
+              <input type="text" placeholder="12 Окт 2022 в 12:00" class="form-input date-input" />
+              <img src="./icons/calendar.png" alt="calendar" class="form-input-icon" />
+            </label>
+            <label class="form-label">
+              <span class="form-label-span text-gray">Длительность</span>
+              <select placeholder="2 часа" class="form-input">
+                <option value="value-1">30 минут</option>
+                <option value="value-2">1 час</option>
+                <option value="value-3">2 часа</option>
+                <option value="value-4">3 часа</option>
+              </select>
+              <img src="./icons/header-arrow-down.png" alt="Arrow Down" class="form-input-icon" />
+            </label>
+            <button class="modal-opener" data-target="success-modal">success modal</button>
+            <br />
+            <button class="modal-opener" data-target="fail-modal">fail modal</button>
+            <br />
+            <button class="modal-opener" data-target="pay-1-modal">Payment modal</button>
+            <br />
+            <button class="modal-opener" data-target="comment-modal">Примечания к заказу</button>
+            <br />
+            <button class="modal-opener" data-target="payment-details-modal">Payment Details</button>
+            <br />
+            <button class="normal-btn on-mobile" id='more'>Продолжить</button>
           </div>
         </div>
-        <div class="main-sec__form-card">
-          <div class="form-radios">
-            <span class="form-radios-title">Время подачи:</span>
-            <div class="form-radios-labels main-sec__form-labels">
-              <label class="form-radios-label">
-                <input type="radio" name="radasdio-1" class="form-radio" checked />
-                <div class="form-radio-shape"></div>
-                <span class="form-radio-text">20 мин</span>
+      </div>
+      <div class="main-sec__step" style='display: none;'>
+        <div class="main-sec__step-box">
+          <p class="payment__num">
+            <b>Шаг 2:</b>
+            <span>Выбор машины</span>
+          </p>
+          <div class="form-x-radios">
+            <h4 class="form-x-radios__title">Пассажиры:</h4>
+            <div class="form-x-radios__container">
+              <label class="form-x-radios__label">
+                <input type="radio" name="x-radio-1" checked />
+                <div class="form-x-radios__shape">
+                  <span>1</span>
+                  <img src="./icons/none.svg" alt="None" />
+                </div>
               </label>
-              <label class="form-radios-label">
-                <input type="radio" name="radasdio-1" class="form-radio" />
-                <div class="form-radio-shape"></div>
-                <span class="form-radio-text">30 мин</span>
+              <label class="form-x-radios__label">
+                <input type="radio" name="x-radio-1" />
+                <div class="form-x-radios__shape">
+                  <span>2</span>
+                  <img src="./icons/none.svg" alt="None" />
+                </div>
               </label>
-              <label class="form-radios-label">
-                <input type="radio" name="radasdio-1" class="form-radio" />
-                <div class="form-radio-shape"></div>
-                <span class="form-radio-text">1 час</span>
+              <label class="form-x-radios__label">
+                <input type="radio" name="x-radio-1" />
+                <div class="form-x-radios__shape">
+                  <span>3</span>
+                  <img src="./icons/none.svg" alt="None" />
+                </div>
+              </label>
+              <label class="form-x-radios__label">
+                <input type="radio" name="x-radio-1" />
+                <div class="form-x-radios__shape">
+                  <span>4</span>
+                  <img src="./icons/none.svg" alt="None" />
+                </div>
+              </label>
+              <label class="form-x-radios__label">
+                <input type="radio" name="x-radio-1" />
+                <div class="form-x-radios__shape">
+                  <span>5</span>
+                  <img src="./icons/none.svg" alt="None" />
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="form-x-radios">
+            <h4 class="form-x-radios__title">Пассажиры:</h4>
+            <div class="form-x-radios__container">
+              <label class="form-x-radios__label">
+                <input type="radio" name="x-radio-2" checked />
+                <div class="form-x-radios__shape">
+                  <span>1</span>
+                  <img src="./icons/none.svg" alt="None" />
+                </div>
+              </label>
+              <label class="form-x-radios__label">
+                <input type="radio" name="x-radio-2" />
+                <div class="form-x-radios__shape">
+                  <span>2</span>
+                  <img src="./icons/none.svg" alt="None" />
+                </div>
+              </label>
+              <label class="form-x-radios__label">
+                <input type="radio" name="x-radio-2" />
+                <div class="form-x-radios__shape">
+                  <span>3</span>
+                  <img src="./icons/none.svg" alt="None" />
+                </div>
+              </label>
+              <label class="form-x-radios__label">
+                <input type="radio" name="x-radio-2" />
+                <div class="form-x-radios__shape">
+                  <span>4</span>
+                  <img src="./icons/none.svg" alt="None" />
+                </div>
+              </label>
+              <label class="form-x-radios__label">
+                <input type="radio" name="x-radio-2" />
+                <div class="form-x-radios__shape">
+                  <span>5</span>
+                  <img src="./icons/none.svg" alt="None" />
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="payment__dbl-label">
+            <h4 class="payment__dbl-label-title">Габариты:</h4>
+            <div class="payment__dbl-label-items">
+              <label class="form-label">
+                <span class="form-label-span">Высота</span>
+                <select placeholder="2 часа" class="form-input">
+                  <option value="value-1">Любая</option>
+                  <option value="value-2">4 часа</option>
+                  <option value="value-3">6 часа</option>
+                  <option value="value-4">8 часа</option>
+                </select>
+                <img src="./icons/header-arrow-down.png" alt="Arrow Down" class="form-input-icon" />
+              </label>
+              <label class="form-label">
+                <span class="form-label-span">Длина</span>
+                <select placeholder="2 часа" class="form-input">
+                  <option value="value-1">Любая</option>
+                  <option value="value-2">4 часа</option>
+                  <option value="value-3">6 часа</option>
+                  <option value="value-4">8 часа</option>
+                </select>
+                <img src="./icons/header-arrow-down.png" alt="Arrow Down" class="form-input-icon" />
               </label>
             </div>
           </div>
           <label class="form-label">
-            <span class="form-label-span text-gray">Дата и время</span>
-            <input type="text" placeholder="12 Окт 2022 в 12:00" class="form-input date-input" />
-            <img src="./icons/calendar.png" alt="calendar" class="form-input-icon" />
-          </label>
-          <label class="form-label">
-            <span class="form-label-span text-gray">Длительность</span>
+            <span class="form-label-span">Кузов</span>
             <select placeholder="2 часа" class="form-input">
-              <option value="value-1">30 минут</option>
-              <option value="value-2">1 час</option>
-              <option value="value-3">2 часа</option>
-              <option value="value-4">3 часа</option>
+              <option value="value-1">Любой</option>
+              <option value="value-2">4 часа</option>
+              <option value="value-3">6 часа</option>
+              <option value="value-4">8 часа</option>
             </select>
             <img src="./icons/header-arrow-down.png" alt="Arrow Down" class="form-input-icon" />
           </label>
-          <button class="modal-opener" data-target="success-modal">success modal</button>
-          <br />
-          <button class="modal-opener" data-target="fail-modal">fail modal</button>
-          <br />
-          <button class="modal-opener" data-target="pay-1-modal">Payment modal</button>
-          <br />
-          <button class="modal-opener" data-target="comment-modal">Примечания к заказу</button>
-          <br />
-          <button class="modal-opener" data-target="payment-details-modal">Payment Details</button>
-          <br />
-          <button class="normal-btn on-mobile">Узнать подробнее</button>
+          <button type="button" class="cost-calc__form-right-add-btn drop-down-btn" data-target="cost-calc-drop-3">
+            <img src="./icons/red-plus.png" alt="+" />
+            <span>Дополнительные услуги</span>
+          </button>
+          <div class="cost-calc__form-bottom-additionals drop-down hidden" id="cost-calc-drop-3">
+            <div class="cost-calc__form-bottom-additional">
+              <label class="form-checkbox">
+                <input type="checkbox" class="form-checkbox-input" />
+                <div class="form-checkbox-shape"></div>
+              </label>
+              <div class="cost-calc__form-bottom-additional-texts">
+                <p>Данные водителя - <b>500 ₽</b>
+                </p>
+                <span> Выслать паспортные данные водителя для оформления пропуска </span>
+              </div>
+            </div>
+            <div class="cost-calc__form-bottom-additional">
+              <label class="form-checkbox">
+                <input type="checkbox" class="form-checkbox-input" />
+                <div class="form-checkbox-shape"></div>
+              </label>
+              <div class="cost-calc__form-bottom-additional-texts">
+                <p>Данные водителя - <b>500 ₽</b>
+                </p>
+                <span> Выслать паспортные данные водителя для оформления пропуска </span>
+              </div>
+            </div>
+            <div class="cost-calc__form-bottom-additional">
+              <label class="form-checkbox">
+                <input type="checkbox" class="form-checkbox-input" />
+                <div class="form-checkbox-shape"></div>
+              </label>
+              <div class="cost-calc__form-bottom-additional-texts">
+                <p>Данные водителя - <b>500 ₽</b>
+                </p>
+                <span> Выслать паспортные данные водителя для оформления пропуска </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="payment__bottom">
+          <div class="payment__bottom-header">
+            <span>Вам подходит:</span>
+            <div class="payment__slider-controls">
+              <button class="payment__slider-controls-btn prev">
+                <img src="./icons/swiper-prev-active.png" alt="Left Arrow" />
+              </button>
+              <p class="payment__slider-nums">
+                <span class="payment__slider-curr">2</span>
+                <span>/</span>
+                <span class="payment__slider-total">18</span>
+              </p>
+              <button class="payment__slider-controls-btn next">
+                <img src="./icons/swiper-prev-active.png" alt="Right Arrow" />
+              </button>
+            </div>
+          </div>
+          <div class="payment__bottom-main">
+            <div class="payment__bottom-main-texts">
+              <h4>Любая Газель</h4>
+              <span>1.9 м до 1.5 т</span>
+              <span>2 пасс</span>
+              <div>
+                <span class="tooltip_parent">
+                  <img src="./icons/red-fill-info.png" alt="Info" />
+                  <span class="tooltip"
+                    data-info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, pariatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, pariatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, pariatur."></span>
+                </span>
+                <span>Подробнее</span>
+              </div>
+            </div>
+            <div class="payment__slider swiper-slider-payment swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="./images/parking/2.png" alt="Payment Truck 1" class="payment__slider-img" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./images/parking/3.png" alt="Payment Truck 1" class="payment__slider-img" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./images/parking/4.png" alt="Payment Truck 1" class="payment__slider-img" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./images/parking/1.png" alt="Payment Truck 1" class="payment__slider-img" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./images/parking/1.png" alt="Payment Truck 1" class="payment__slider-img" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="normal-btn" id='more-2'>Продолжить</button>
+        </div>
+      </div>
+      <div class="main-sec__step" style='display: none;'>
+        <div class="main-sec__inner">
+          <p class="payment__num">
+            <b>Шаг 3:</b><br>
+            <span>Оформить заказ</span>
+          </p>
+          <label class="form-label">
+            <span class="form-label-span">Ваше имя</span>
+            <input type="text" placeholder="Алена" class="form-input clear-feature" />
+          </label>
+          <label class="form-label">
+            <input type="text" placeholder="Ваш телефон" class="form-input clear-feature" />
+          </label>
+          <div class="form-radios">
+            <span class="form-radios-title">Оплата:</span>
+            <div class="form-radios-labels">
+              <label class="form-radios-label">
+                <input type="radio" name="radio-1" class="form-radio" />
+                <div class="form-radio-shape"></div>
+                <span class="form-radio-text">Наличными</span>
+              </label>
+              <label class="form-radios-label">
+                <input type="radio" name="radio-1" class="form-radio" />
+                <div class="form-radio-shape"></div>
+                <span class="form-radio-text">Онлайн оплата</span>
+              </label>
+            </div>
+          </div>
+          <button class="form-add-btn">
+            <img src="./icons/add-circle.png" alt="Add" />
+            <span class="form-add-text">Примечания к заказу</span>
+          </button>
+          <button class="form-add-btn">
+            <img src="./icons/add-circle.png" alt="Add" />
+            <span class="form-add-text">Активировать купон</span>
+          </button>
+        </div>
+        <div class="main-sec__second">
+          <div class="payment__total">
+            <div class="payment__total-list">
+              <div class="payment__total-list-item">
+                <span class="payment__total-list-item-name">Обычная цена</span>
+                <span class="payment__total-list-item-value">0 ₽</span>
+              </div>
+              <div class="payment__total-list-item">
+                <span class="payment__total-list-item-name">Скидка</span>
+                <span class="payment__total-list-item-value">0 ₽</span>
+              </div>
+            </div>
+            <h2 class="payment__total-num">Итого: 0 ₽</h2>
+            <p class="payment__total-subnum">Доп час: 0 ₽</p>
+          </div>
+          <button disabled class="normal-btn">Оформить сейчас</button>
+          <span class="payment__subtext"> Нажимая кнопку «Оформить сейчас», вы соглашаетесь c политикой обработки
+            ваших персональных данных </span>
         </div>
       </div>
     </div>
@@ -1121,6 +1399,7 @@
       </div>
     </div>
     <label class="form-label on-mobile">
+      <img src="./icons/services-building.png" alt="Building" class="services__card-icon-mob" />
       <select class="form-input">
         <option value="value-2">
           <div>
@@ -5202,7 +5481,7 @@
     </div>
     <div class="modal__bg"></div>
   </div>
-
+  <script src='https://code.jquery.com/jquery-3.6.4.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/air-datepicker@3.3.5/air-datepicker.min.js"></script>
   <script src="libs/inputmask.min.js"></script>

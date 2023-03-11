@@ -1,6 +1,16 @@
 const $ = selector => document.querySelector(selector);
 const $All = selector => document.querySelectorAll(selector);
-
+const more = document.querySelector("#more");
+const more2 = document.querySelector("#more-2");
+more.addEventListener("click", () => {
+	document.querySelector(".main-sec__step").style.display = "none";
+	document.querySelectorAll(".main-sec__step")[1].style.display = "flex";
+});
+more2.addEventListener("click", () => {
+	document.querySelectorAll(".main-sec__step")[1].style.display = "none";
+	document.querySelectorAll(".main-sec__step")[2].style.display = "flex";
+});
+// $("#picker").dateTimePicker();
 const handleServicesTab = () => {
 	const tabBtns = $All(".services__card");
 	const tabCards = $All(".services__item");
@@ -191,8 +201,9 @@ const handleStyledSelects = () => {
 		optionsContainer.style.pointerEvents = "none";
 		const changeState = isActive => {
 			optionsContainer.classList[isActive ? "add" : "remove"]("active");
-			if (icon?.style)
-				icon.style.transform = `rotate(${isActive ? 18 : ""}0deg)`;
+			if (icon?.style) {
+				icon.style.transform = `rotate(${isActive ? 18 : "0"}0deg)`;
+			}
 			select.parentElement.classList[isActive ? "add" : "remove"]("active");
 		};
 
@@ -222,7 +233,7 @@ const handleStyledSelects = () => {
 					getResultText(optionEl.innerText)
 				);
 
-				setTimeout(() => changeState(false), 100);
+				setTimeout(() => changeState(false), 0);
 			});
 
 			optionsContainer.insertAdjacentElement("beforeend", optionEl);

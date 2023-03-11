@@ -100,8 +100,17 @@
 			padding-right: 86px !important;
 		}
 	}
+	.result {
+		font-weight: 500 !important;
+	}
+	.custom-select {
+		padding-left: 55px;
+	}
 }
-
+.services__card-icon-mob {
+	position: absolute;
+	left: 15px;
+}
 @media (max-width: 900px) {
 	.services__card-name {
 		text-align: center;

@@ -286,6 +286,12 @@
 }
 
 @media (max-width: 768px) {
+	.main-sec__form .form-label:last-of-type {
+		margin-bottom: 2px;
+	}
+	.custom-select + .form-input-icon {
+		right: 10px !important;
+	}
 	.order {
 		margin-top: 40px;
 

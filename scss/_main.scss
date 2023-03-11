@@ -174,9 +174,9 @@ a {
 	margin-top: 20px;
 
 	&.active {
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 0;
-		border-bottom: 0;
+		// border-bottom-left-radius: 0;
+		// border-bottom-right-radius: 0;
+		// border-bottom: 0;
 	}
 
 	&.focused {
@@ -665,24 +665,26 @@ a {
 	& > div {
 		position: absolute;
 		left: -1px;
-		top: 99%;
+		top: 115%;
 		display: flex;
 		flex-direction: column;
 		background: #fff;
 		width: calc(100% + 1.5px);
 		align-items: flex-start;
-		box-shadow: 0px 8px 5px 0px #ddd;
-		border-bottom-left-radius: 10px;
-		border-bottom-right-radius: 10px;
+		border-radius: 10px;
 		z-index: 20;
 		padding: 0;
 		opacity: 0;
+		visibility: hidden;
 		transition: 200ms;
 		max-height: 276px;
 		overflow-y: auto;
 		min-width: max-content;
-		border: 0.1px solid #c2c2c2;
-		border-top: 0;
+		border: 1px solid #e0e0e0;
+		box-shadow: 0px 86px 34px rgba(0, 0, 0, 0.01),
+			0px 48px 29px rgba(0, 0, 0, 0.05), 0px 21px 21px rgba(0, 0, 0, 0.09),
+			0px 5px 12px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+		border-radius: 16px;
 
 		&.active {
 			opacity: 1;
@@ -712,8 +714,15 @@ a {
 			}
 		}
 	}
+	& > div.active {
+		visibility: visible !important;
+	}
 }
-
+.custom-select {
+	.result {
+		font-weight: 400;
+	}
+}
 .loc-select {
 	position: absolute;
 	left: 108%;
@@ -1050,7 +1059,67 @@ a {
 		0px 5px 12px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
 	max-width: 471px;
 }
-
+.main-sec__step:nth-child(3) {
+	gap: 30px;
+	display: flex;
+	.payment__bottom {
+		max-width: 100%;
+		overflow: hidden;
+	}
+	.payment__bottom-main {
+		flex-direction: column;
+		margin-bottom: 50px;
+	}
+	.swiper {
+		background: transparent !important;
+	}
+	.payment__num {
+		span {
+			display: block;
+			width: 100%;
+			margin-top: 10px;
+		}
+	}
+}
+.main-sec__step:nth-child(4) {
+	gap: 30px;
+	display: flex;
+	.payment__num {
+		span {
+			display: block;
+			width: 100%;
+			margin-top: 10px;
+		}
+	}
+	.main-sec__inner {
+		flex-shrink: 0;
+		width: 50%;
+	}
+	.form-add-btn {
+		margin-left: 0 !important;
+		margin-bottom: 10px;
+	}
+	.form-radios {
+		margin-top: 15px;
+	}
+	.payment__total {
+		border-top: none;
+	}
+	.normal-btn {
+		margin-bottom: 13px;
+	}
+	.main-sec__second {
+		display: flex;
+		flex-direction: column;
+	}
+}
+#more-2 {
+	width: 100%;
+}
+.main-sec__step-box {
+	flex-shrink: 0;
+	width: 330px;
+}
 .added-address {
 	display: flex;
 	margin: 20px 0;
